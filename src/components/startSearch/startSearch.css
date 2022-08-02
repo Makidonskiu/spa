@@ -1,0 +1,21 @@
+.start-search{
+    text-align: center;
+    margin-top: 20%;
+}
+
+.start-search h1{
+    margin-bottom: 90px;
+}
+
+.max-but{
+    max-width: 40%;
+    height: 52px;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+.w-button{
+    width: 110px;
+}

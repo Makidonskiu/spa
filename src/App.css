@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  max-width: 80%;
+  height: 1080px;
+  background: rgb(255, 255, 255);
+  margin: 50px auto;
+  color: black;
+}
+
+.cur{
+  cursor: pointer;
+}
+
+.mr{
+  margin-right: 40px;
+}
