@@ -5,3 +5,35 @@
 .home h2{
     margin-bottom: 30px;
 }
+
+.height{
+    height: 52px;
+}
+
+.home-header{
+    margin-top: 50px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-header div img{
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.home-video{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.home-video2{
+    margin-top: 40px;
+}
+
+.home-video2{
+    
+}

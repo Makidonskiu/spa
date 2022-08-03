@@ -1,14 +1,18 @@
 .header{
-    height: 80px;
     color: #1390E5;
     display: flex;
     font-size: 18px;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px rgb(179, 179, 179);
 }
 
 .search-favorites{
     display: flex;
     align-items: center;
+    padding: 10px 0px;
+}
+
+.header-active{
+    border-bottom: #1390E5 solid 2px;
 }

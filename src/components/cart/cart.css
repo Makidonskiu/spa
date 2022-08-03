@@ -1,0 +1,21 @@
+.cart{
+    max-width: 245px;
+}
+.cart-p{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.cart-p2{
+    color: rgba(23, 23, 25, 0.3);
+}
+
+.cart-flex{
+    display: flex;
+    max-width: 800px;
+}
+
+.cart-video{
+    margin-bottom: 60px;
+    margin-right: 20px;
+}

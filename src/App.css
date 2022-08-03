@@ -5,10 +5,10 @@
 }
 
 .App{
-  max-width: 80%;
+  max-width: 1040px;
   height: 1080px;
   background: rgb(255, 255, 255);
-  margin: 50px auto;
+  margin: 0 auto;
   color: black;
 }
 
@@ -18,4 +18,8 @@
 
 .mr{
   margin-right: 40px;
+}
+
+.mt{
+  padding-top:20px;
 }

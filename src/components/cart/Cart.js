@@ -1,7 +1,15 @@
 import React from 'react'
 
-export const Cart = () => {
+import './cart.css'
+
+export const Cart = ({text, img, textSup, activeRules}) => {
   return (
-    <div>Cart</div>
+    <div className={!activeRules ? 'cart': 'cart cart-flex'}>
+      <img className={!activeRules ? 'cur': 'cur cart-video'} src={img} alt="Video" />
+      <div>
+      <p className='cart-p'>{text}</p>
+      <p className='cart-p2'>{textSup}</p>
+      </div>
+    </div>
   )
 }

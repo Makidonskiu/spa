@@ -12,8 +12,12 @@ export const StartSearch = ({ value, setValue }) => {
   const navigate = useNavigate();
 
   const onClick = () => {
-    if(value !== '') navigate('/home'); 
+    if(value !== '') navigate('/home');
   };
+
+  const clickEnter = (e) => {
+    if(e.key === 'Enter' && value !== '') navigate('/home');
+  }
   
   return (
     <div className="start-search">
@@ -25,6 +29,7 @@ export const StartSearch = ({ value, setValue }) => {
           aria-describedby="basic-addon1"
           placeholder="Что хотите посмотреть ?"
           onChange={(e) => setValue(e.target.value)}
+          onKeyPress={clickEnter}
         />
         <Button onClick={onClick} className="w-button" variant="info" id="button-addon1">
           Найти
