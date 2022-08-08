@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../image/sibdev-logo.png'
 
 import './header.css'
@@ -9,11 +10,11 @@ export const Header = () => {
   return (
     <div className='header'>
         <div className='search-favorites'>
-            <img className='mr' src={logo} alt="logo" />
-            <p onClick={()=>heandleClick(1)} className={activeHeader === 1? 'cur mr mt header-active': 'cur mr mt'}>Поиск</p>
-            <p onClick={()=>heandleClick(2)} className={activeHeader === 2? 'cur mt header-active': 'cur mt'}>Избранное</p>
+            <Link to={'/'}><img className='header-img' src={logo} alt="logo" /></Link>
+            <Link to={'/home'}><p onClick={()=>heandleClick(1)} className={activeHeader === 1? 'cur marg header-active': 'cur marg header-item'}>Поиск</p></Link>
+            <Link to={'/favorite'}><p onClick={()=>heandleClick(2)} className={activeHeader === 2? 'cur marg header-active': 'cur marg header-item'}>Избранное</p></Link>
         </div>
-        <p className='cur mt'>Выйти</p>
+        <Link to={'/register'}><p className='cur marg header-item'>Выйти</p></Link>
     </div>
   )
 }

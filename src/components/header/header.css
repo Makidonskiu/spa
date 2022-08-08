@@ -9,10 +9,25 @@
 
 .search-favorites{
     display: flex;
-    align-items: center;
-    padding: 10px 0px;
+}
+
+.header-img{
+    position: relative;
+    top: 30px;
+    width: 45px;
+}
+
+.header-item{
+    padding-bottom: 15px;
+    position: relative;
+    top: 18px;
 }
 
 .header-active{
     border-bottom: #1390E5 solid 2px;
+    padding-bottom: 15px;
+    position: relative;
+    top: 18px;
 }
+
+

@@ -11,16 +11,28 @@
 }
 
 .home-header{
-    margin-top: 50px;
+    margin-top: 0px;
     font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.form-boots{
+    z-index: 1;
+}
+
 .home-header div img{
     margin-left: 20px;
     cursor: pointer;
+}
+
+.home-header p span{
+ font-size: 10px;
+}
+
+.home-span{
+    margin-left: 10px;
 }
 
 .home-video{
@@ -34,6 +46,9 @@
     margin-top: 40px;
 }
 
-.home-video2{
-    
+.home-img{
+    position: relative;
+    top: -53px;
+    left: 892px;
+    z-index: 2;
 }

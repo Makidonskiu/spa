@@ -1,0 +1,9 @@
+.favorite{
+    margin-top: 65px;
+}
+
+.favorite-p{
+    border: solid 1px rgb(214, 214, 214);
+    padding: 3px 15px;
+    border-radius: 5px;
+}
