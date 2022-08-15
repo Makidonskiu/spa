@@ -54,12 +54,13 @@ export const Home = ({ value, setValue, favorites, setFavorites }) => {
           aria-describedby="basic-addon1"
           placeholder="Что хотите посмотреть ?"
           onChange={(e) => setValue(e.target.value)}
+          onKeyPress={clickEnter} 
         /> 
         <Button className="w-button" variant="info" id="button-addon1">
           Найти
         </Button>
       </InputGroup>
-       <Link to={'/favorite'}><img className='home-img' onKeyPress={clickEnter} onClick={onFavorites} height={'20px'} src={favorite} alt="favorite" /></Link>
+       { value ? <Link to={'/save'}><img className='home-img' onClick={onFavorites} height={'20px'} src={favorite} alt="favorite" /></Link> : <img className='home-img' height={'20px'} src={favorite} alt="favorite" />}
       <div className="home-header">
         <p>
           Видео по запросу

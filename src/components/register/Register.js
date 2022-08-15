@@ -6,7 +6,13 @@ import './register.css'
 import { useNavigate } from 'react-router-dom';
 
 export const Register = ({setRegis}) => {
-    const onFinish = (values) => setRegis(values);
+    const onFinish = (values) => {
+      setRegis({
+        login: values.login,
+        password: values.password,
+      })
+      localStorage.setItem('reg', JSON.stringify(values))
+    };
     
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
