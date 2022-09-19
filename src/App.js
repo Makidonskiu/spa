@@ -7,37 +7,62 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [value, setValue] = React.useState('');
-  const [ favorites, setFavorites ] = React.useState([]);
-  const [ regis, setRegis ] = React.useState([]);
-  const [ res, setRes ] = React.useState({
+  const [favorites, setFavorites] = React.useState([]);
+  const [regis, setRegis] = React.useState([]);
+  const [video, setVideo] = React.useState([]);
+  const [number, setNumber] = React.useState(1)
+  const isMounted = React.useRef(true)
+  
+  const [res, setRes] = React.useState({
     login: '',
     password: '',
+    isMounted: isMounted.current
   });
+  const inputRef = React.useRef(null);
 
-  React.useEffect( () => {
-    const regi = JSON.parse(localStorage.getItem('reg'))
+  const objState = {
+    value,
+    setValue,
+    favorites,
+    setFavorites,
+    regis,
+    setRegis,
+    video,
+    setVideo,
+    res,
+    setRes,
+    inputRef,
+    number, 
+    setNumber,
+  };
+
+  React.useEffect(() => {
+    isMounted.current = true
+    const regi = JSON.parse(localStorage.getItem('reg'));
     setRes({
       login: regi.login,
-      password:regi.password
-    })
-  }, [])
-
-  if(!(res.login === 'alex' && res.password === 'mos')){
-    return <Register setRegis={setRegis}/>
+      password: regi.password,
+    });
+    if (regi.login === 'alex' && regi.password === 'mos') {
+     isMounted.current = false
   }
+  console.log(regi, res)
+  }, [isMounted.current]);
 
-  console.log(res)
-  return (
-    <div className="App">
-      <Header regis={regis} setRes={setRes}/>
-      <Routes>
-        <Route path="/" element={<StartSearch value={value} setValue={setValue} />} />
-        <Route path="/home" element={<Home value={value} setValue={setValue} favorites={favorites} setFavorites={setFavorites}/>} />
-        <Route path="/favorite" element={<Favorite favorites={favorites} setFavorites={setFavorites} setValue={setValue}/>} />
-        <Route path="/save" element={<SaveSearch value={value}/>}/>
-      </Routes>
-    </div>
-  );
+  if (isMounted.current) {
+    return <Register isMounted={isMounted} setRegis={setRegis} />;
+  }
+    return (
+      <div className="App">
+        <Header isMounted={isMounted} setRes={setRes} />
+        <Routes>
+          <Route path="/" element={<StartSearch {...objState} />} />
+          <Route path="/home" element={<Home {...objState} />} />
+          <Route path="/favorite" element={<Favorite {...objState} />} />
+          <Route path="/save" element={<SaveSearch {...objState} />} />
+        </Routes>
+      </div>
+    );
 }
 
 export default App;

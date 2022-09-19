@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../image/sibdev-logo.png'
+import { useNavigate } from 'react-router-dom'
 
 import './header.css'
 
-export const Header = ({setRes}) => {
+export const Header = ({setRes, isMounted}) => {
   const [activeHeader,setActiveHeader] = React.useState(null)
   const heandleClick = (param) => setActiveHeader(param)
+  const navigate = useNavigate()
 
   const onClickExit = () => {
+    isMounted.current = true
     localStorage.setItem('reg', JSON.stringify({login: '', password: ''}))
     setRes({login: '', password: ''})
+    navigate('/')
   }
 
   return (
@@ -26,7 +30,3 @@ export const Header = ({setRes}) => {
     </div>
   )
 }
-
-// 
-
-// setRes({login: '', password: ''})

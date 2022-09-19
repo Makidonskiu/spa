@@ -1,12 +1,13 @@
 import React from 'react'
 import { Col, InputNumber, Row, Slider } from 'antd';
 
-export const IntegerStep = () => {
+export const IntegerStep = ({setNumber}) => {
     const [inputValue, setInputValue] = React.useState(1);
-  
     const onChange = (newValue) => {
       setInputValue(newValue);
+      setNumber(newValue)
     };
+
   return (
     <Row>
         <Col span={18}>
@@ -14,7 +15,7 @@ export const IntegerStep = () => {
             min={1}
             max={50}
             onChange={onChange}
-            value={typeof inputValue === 'number' ? inputValue : 0}
+            value={(typeof inputValue === 'number') ? inputValue : 1}
             style={{
               width: '350px',
             }}

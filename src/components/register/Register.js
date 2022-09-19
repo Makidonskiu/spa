@@ -2,27 +2,34 @@ import React from 'react';
 import { Button, Form, Input } from 'antd';
 import logo from '../../image/sibdev-logo.png';
 
-import './register.css'
+import './register.css';
 import { useNavigate } from 'react-router-dom';
 
-export const Register = ({setRegis}) => {
-    const onFinish = (values) => {
+export const Register = ({ setRegis, isMounted }) => {
+  const navigate = useNavigate()
+
+  const onFinish = (values) => {
+    if(values.login ==='alex' && values.password === 'mos'){
+      isMounted.current = false
       setRegis({
         login: values.login,
-        password: values.password,
-      })
-      localStorage.setItem('reg', JSON.stringify(values))
-    };
-    
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+        password: values.password
+      });
+      localStorage.setItem('reg', JSON.stringify(values));
+      navigate('/')
+    }
+  };
 
-      const navigate = useNavigate()
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
-    <div className='register'>
-      <img className='register-img' src={logo} alt="logo" />
-      <p className='register-img'><b>Вход</b></p>
+    <div className="register">
+      <img className="register-img" src={logo} alt="logo" />
+      <p className="register-img">
+        <b>Вход</b>
+      </p>
       <Form
         name="basic"
         labelCol={{
@@ -66,7 +73,7 @@ export const Register = ({setRegis}) => {
             offset: 7,
             span: 16,
           }}>
-          <Button onClick={()=> navigate('/')} type="primary" htmlType="submit"> 
+          <Button onClick={onFinish} type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>

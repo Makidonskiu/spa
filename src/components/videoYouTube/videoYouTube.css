@@ -1,0 +1,23 @@
+.VideoYouTube-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.VideoYouTube-justify{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.VideoYouTube-bottom{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.VideoYouTube-iframe{
+    max-width: 240px;
+}
+
+.VideoYouTube-ml{
+    margin-left: 20px;
+}

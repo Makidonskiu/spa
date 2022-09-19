@@ -38,12 +38,12 @@
 .home-video{
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 25px;
     flex-wrap: wrap;
 }
 
 .home-video2{
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .home-img{
@@ -51,4 +51,13 @@
     top: -53px;
     left: 892px;
     z-index: 2;
+    cursor: pointer;
+    border: solid 1px rgb(147, 146, 146);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.home-img:hover{
+    
+    background-color: rgb(194, 255, 163);
 }
