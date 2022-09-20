@@ -11,11 +11,11 @@ export const Register = ({ setRegis, isMounted }) => {
   const onFinish = (values) => {
     if(values.login ==='alex' && values.password === 'mos'){
       isMounted.current = false
+      localStorage.setItem('reg', JSON.stringify(values));
       setRegis({
         login: values.login,
         password: values.password
       });
-      localStorage.setItem('reg', JSON.stringify(values));
       navigate('/')
     }
   };

@@ -16,7 +16,6 @@ function App() {
   const [res, setRes] = React.useState({
     login: '',
     password: '',
-    isMounted: isMounted.current
   });
   const inputRef = React.useRef(null);
 
@@ -38,15 +37,16 @@ function App() {
 
   React.useEffect(() => {
     isMounted.current = true
-    const regi = JSON.parse(localStorage.getItem('reg'));
-    setRes({
-      login: regi.login,
-      password: regi.password,
-    });
-    if (regi.login === 'alex' && regi.password === 'mos') {
+    const regi = JSON.parse(localStorage.getItem('reg')) || [...regis];
+    console.log(regi)
+    if (regi.login === 'alex' ) {
+      setRegis({
+        login: regi.login,
+        password: regi.password,
+      });
      isMounted.current = false
   }
-  console.log(regi, res)
+  console.log(regi, regis)
   }, [isMounted.current]);
 
   if (isMounted.current) {
