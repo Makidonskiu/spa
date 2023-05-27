@@ -53,7 +53,7 @@ export const Register = ({ setRegis, isMounted }) => {
               message: 'Пожалуйста введите логин!',
             },
           ]}>
-          <Input />
+          <Input placeholder='alex'/>
         </Form.Item>
 
         <Form.Item
@@ -65,7 +65,7 @@ export const Register = ({ setRegis, isMounted }) => {
               message: 'Пожалуйста введите пароль!',
             },
           ]}>
-          <Input.Password />
+          <Input.Password placeholder='mos'/>
         </Form.Item>
 
         <Form.Item
